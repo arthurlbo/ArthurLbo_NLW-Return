@@ -14,7 +14,7 @@ export const theme = {
   },
 
   fonts: {
-    regular: 'Inter_400Regular',
+    regular: 'Inter_400Medium',
     medium: 'Inter_500Medium',
   }
 };
