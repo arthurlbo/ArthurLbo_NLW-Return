@@ -11,24 +11,22 @@ interface SubmitFeedbackUseCaseRequest {
 export class SubmitFeedbackUseCase {
     constructor(
         private feedbacksRepository: FeedbacksRepository,
-        private mailAdapter: MailAdapter,
-        ) {}
+        private mailAdapter: MailAdapter
+    ) {}
 
     async execute(request: SubmitFeedbackUseCaseRequest) {
         const { type, comment, screenshot } = request;
 
-        if (!type){
+        if (!type) {
             throw new Error('type is required');
         }
-        if (!comment){
+        if (!comment) {
             throw new Error('comment is required');
         }
 
-        if ( screenshot && !screenshot.startsWith('data:image/png;based64')){
+        if (screenshot && !screenshot.startsWith('data:image/png;based64')) {
             throw new Error('format invalid');
         }
-
-
 
         await this.feedbacksRepository.create({
             type,
@@ -36,14 +34,14 @@ export class SubmitFeedbackUseCase {
             screenshot,
         });
 
-       await this.mailAdapter.sendMail({
+        await this.mailAdapter.sendMail({
             subject: 'Novo feedback',
             body: [
                 `<div style="font-family: sans-serif; font-size: 16px; color: #111;" >`,
                 `<p>Tipo do feedback: ${type}</p> `,
                 `<p>Comentario: ${comment}</p>`,
-                `<div/>`
-            ].join('\n')
+                `<div/>`,
+            ].join('\n'),
         });
     }
 }

@@ -38,9 +38,9 @@ export type FeedbackType = keyof typeof feedbackTypes;
 
 export function WidgetForm() {
     const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
-    const [feedbackSent, setFeedbackSent] = useState(false)
+    const [feedbackSent, setFeedbackSent] = useState(false);
 
-    function handleRestartFeedback(){
+    function handleRestartFeedback() {
         setFeedbackSent(false);
         setFeedbackType(null);
     }
