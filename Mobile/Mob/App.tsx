@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
-//import AppLoading from 'expo-app-loading';
+import AppLoading from 'expo-app-loading';
 
 import {
     useFonts,
@@ -19,9 +19,9 @@ export default function App() {
         Inter_500Medium,
     });
 
-   /* if (!fontsLoaded) {
+   if (!fontsLoaded) {
         return <AppLoading/>
-    }*/
+    }
 
     return (
         <View

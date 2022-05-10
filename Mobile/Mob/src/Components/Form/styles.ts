@@ -45,4 +45,9 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.regular,
   },
 
+  footer: {
+      flexDirection: 'row',
+      marginBottom: 16,
+  }
+
 });
