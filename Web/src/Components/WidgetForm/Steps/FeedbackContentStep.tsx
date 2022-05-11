@@ -1,6 +1,7 @@
 import { ArrowLeft, Camera } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 import { FeedbackType, feedbackTypes } from '..';
+import { api } from '../../../Lib/api';
 import { CloseButton } from '../../CloseButton';
 import { ScreenshotButton } from '../ScreenshotButton';
 
@@ -20,12 +21,15 @@ export function FeedbackContentStep({
 
     const feedbackTypeInfo = feedbackTypes[feedbackType];
 
-    function handleSubmitFeedback(event: FormEvent) {
+    async function handleSubmitFeedback(event: FormEvent) {
         event.preventDefault();
-        console.log({
-            screenshot,
+       
+
+      await  api.post('/feedbacks', {
+            type: feedbackType,
             comment,
-        });
+            screenshot,
+        })
 
         onFeedbackSent();
     }
@@ -55,7 +59,7 @@ export function FeedbackContentStep({
 
             <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
                 <textarea
-                    className="min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar  scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin "
+                    className="min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin "
                     placeholder="Conte com detalhe o que está acontecendo..."
                     onChange={(event) => setComment(event.target.value)}
                 />
