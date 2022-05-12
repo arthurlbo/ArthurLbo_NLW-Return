@@ -1,4 +1,5 @@
 import { Props } from '@headlessui/react/dist/types';
+import succesImage from '../../../Assets/success.svg'
 import { CloseButton } from '../../CloseButton';
 
 interface FeedbackSuccessStepProps {
@@ -16,7 +17,7 @@ export function FeedbackSuccessStep({
 
             <div className="flex flex-col  items-center py-10 w-[304px]">
                 <img
-                    src="../../../Assets/success.svg"
+                    src={succesImage}
                     alt="Imagem de check finalizado"
                 />
 
