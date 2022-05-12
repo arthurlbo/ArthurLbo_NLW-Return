@@ -16,7 +16,7 @@ export function FeedbackSuccessStep({
 
             <div className="flex flex-col  items-center py-10 w-[304px]">
                 <img
-                    src="../../../Assets/Success.svg"
+                    src="../../../Assets/success.svg"
                     alt="Imagem de check finalizado"
                 />
 
