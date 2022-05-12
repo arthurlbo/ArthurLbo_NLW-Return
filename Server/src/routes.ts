@@ -7,7 +7,7 @@ export const routes = express.Router();
 /*
 routes.get('/', (req, res) => {
     return res.send('Servidor arthur');
-});*/
+})*/
 routes.post('/feedbacks', async (req, res) => {
     const { type, comment, screenshot } = req.body;
 
