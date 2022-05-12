@@ -24,7 +24,8 @@ export class SubmitFeedbackUseCase {
             throw new Error('comment is required');
         }
         /* if (screenshot && !screenshot.startsWith('data:image/png;based64')) {
-            throw new Error('');}*/
+            throw new Error('');
+        }*/
 
         await this.feedbacksRepository.create({
             type,
