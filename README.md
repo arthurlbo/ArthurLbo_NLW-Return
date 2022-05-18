@@ -9,4 +9,5 @@ Tecnologias ultilizadas:
 * Yarn
 * React
 * React-native
+* TypeScript
 * Tailwind
