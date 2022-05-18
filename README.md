@@ -1,6 +1,6 @@
-Projeto realizado na Next Level Week#8 da Rocketseat.
+# Projeto realizado na Next Level Week#8 da Rocketseat.
 
-Tecnologias ultilizadas
+Tecnologias ultilizadas: 
 
 * Node JS
 * Prisma
