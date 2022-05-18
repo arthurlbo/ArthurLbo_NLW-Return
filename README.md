@@ -1,19 +1,12 @@
-#Projeto realizado na Next Level Week#8 da Rocketseat.
+Projeto realizado na Next Level Week#8 da Rocketseat.
 
-Tecnologias:
+Tecnologias ultilizadas
 
-*NodeJS
-
-*Yarn
-
-*Prisma
-
-*Express
-
-*ReactJS
-
-*TailwindCSS
-
-*React Native
-
-*Expo
+* Node JS
+* Prisma
+* Express
+* Expo
+* Yarn
+* React
+* React-native
+* Tailwind
